@@ -20,4 +20,4 @@
 .idea/
 .idea/*
 
-config/initializers/clarifai.rb
+#config/initializers/clarifai.rb
