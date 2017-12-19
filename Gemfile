@@ -16,6 +16,8 @@ gem 'clarifai-rails'
 group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
+
 end
 
 group :development do
