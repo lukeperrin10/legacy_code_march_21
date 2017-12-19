@@ -12,11 +12,13 @@ gem 'puma', '~> 3.7'
 gem 'rack-cors'
 gem 'jsonapi-resources'
 gem 'clarifai-rails'
+gem 'rest-client'
 
 group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'dotenv-rails'
 
 end
 
