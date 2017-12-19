@@ -11,6 +11,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'rack-cors'
 gem 'jsonapi-resources'
+gem 'clarifai-rails'
 
 group :development, :test do
   gem 'pry-byebug'
