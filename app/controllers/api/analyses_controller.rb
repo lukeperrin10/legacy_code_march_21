@@ -20,10 +20,11 @@ class Api::AnalysesController < ApplicationController
   end
 
   def analyze_resource
+    resource = analysis_params[:resource]
     if analysis_category == :image
-      @results = image_analysis(analysis_params[:url])
+      @results = image_analysis(resource)
     elsif analysis_category == :text
-      @results = text_analysis(analysis_params[:text])
+      @results = text_analysis(resource)
     end
   end
 

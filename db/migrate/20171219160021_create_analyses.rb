@@ -3,8 +3,9 @@ class CreateAnalyses < ActiveRecord::Migration[5.1]
     execute 'CREATE EXTENSION IF NOT EXISTS hstore'
     create_table :analyses do |t|
       t.string :category
-      t.string :url
+      t.text :resource
       t.hstore :results
+      t.string :request_ip
 
       t.timestamps
     end
