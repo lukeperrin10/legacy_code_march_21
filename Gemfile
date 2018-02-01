@@ -13,6 +13,7 @@ gem 'rack-cors'
 gem 'jsonapi-resources'
 gem 'clarifai-rails'
 gem 'rest-client'
+gem 'rack-cors'
 
 group :development, :test do
   gem 'pry-byebug'
