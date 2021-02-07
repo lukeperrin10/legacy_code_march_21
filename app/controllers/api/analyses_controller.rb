@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::AnalysesController < ApplicationController
   before_action :analyze_resource, only: [:create]
 
@@ -10,7 +12,6 @@ class Api::AnalysesController < ApplicationController
     else
       render json: analysis.errors.full_messages
     end
-
   end
 
   private
@@ -29,19 +30,16 @@ class Api::AnalysesController < ApplicationController
   end
 
   def text_analysis(text)
-    url = URI.parse('https://nehac-ml-analyzer.p.mashape.com/adult')
-    url.query = URI.encode_www_form(text: text)
-    credentials = {x_mashape_key: ENV['ML_ANALYZER_KEY'],
-                   accept: 'application/json'}
-    response = RestClient.get(url.to_s, headers = credentials)
-    JSON.parse(response.body)
+    model_id = 'cl_KFXhoTdt' # Profanity & Abuse Detection
+    response = Monkeylearn.classifiers.classify(model_id, [text])
+    response.body[0]
   end
 
   def image_analysis(url)
     Clarifai::Rails::Detector
-        .new(url)
-        .image
-        .concepts_with_percent
+      .new(url)
+      .image
+      .concepts_with_percent
   end
 
   def analysis_category

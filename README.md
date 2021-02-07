@@ -1,24 +1,12 @@
-# README
+## Moderation API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This API can be used for moderating text and images. It makess use of Clarifai and MonkeyLearn. Two API that can be uses for image and text analysiss resspectively.
 
-Things you may want to cover:
+### Analysis models
+https://www.clarifai.com/model-gallery
 
-* Ruby version
+https://monkeylearn.com/blog/public-and-ready-to-use-modules/
 
-* System dependencies
+# Challenge
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+??

@@ -1,19 +1,17 @@
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
+ruby '2.5.1'
 
-
-gem 'rails', '~> 5.1.4'
-gem 'pg', '~> 0.18'
-gem 'puma', '~> 3.7'
-gem 'rack-cors'
-gem 'jsonapi-resources'
-gem 'clarifai-rails'
+gem 'rails', '~> 6.0.0'
+gem 'pg', '>= 0.18', '< 2.0'
+gem 'puma', '~> 4.1'
+gem 'bootsnap', '>= 1.4.2', require: false
+gem 'rack-cors', require: 'rack/cors'
+gem 'clarifai-rails', '~> 0.2.1'
 gem 'rest-client'
 gem 'rack-cors'
+gem 'monkeylearn'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -28,5 +26,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-
