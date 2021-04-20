@@ -10,7 +10,7 @@ class Api::AnalysesController < ApplicationController
     if analysis.persisted?
       render json: analysis
     else
-      render json: analysis.errors.full_messages
+      render json: analysis.errors.full_messages, status: 422
     end
   end
 
