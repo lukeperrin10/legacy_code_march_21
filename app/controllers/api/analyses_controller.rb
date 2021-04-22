@@ -16,7 +16,7 @@ class Api::AnalysesController < ApplicationController
 
   private
 
-  def analysis_params
+  def analysis_params 
     params.require(:analysis).permit!
   end
 
@@ -38,7 +38,6 @@ class Api::AnalysesController < ApplicationController
 
   def image_analysis(url)
     Clarifai::Rails::Detector
-    
       .new(url)
       .image
       .concepts_with_percent

@@ -18,7 +18,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'factory_bot_rails'
   gem 'shoulda-matchers'
-  gem "webmock"
+  # gem "webmock"
 end
 
 group :development do
