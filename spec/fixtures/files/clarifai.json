@@ -1,0 +1,15 @@
+{
+  "id": 60,
+  "category": "image",
+  "resource": "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fG1hbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+  "results": {
+    "safe": "0.9710917",
+    "suggestive": "0.027796645",
+    "gore": "0.0006652961",
+    "drug": "0.00022939371",
+    "explicit": "0.000216912"
+  },
+  "request_ip": "83.254.193.131",
+  "created_at": "2021-04-22T20:33:13.177Z",
+  "updated_at": "2021-04-22T20:33:13.177Z"
+}
