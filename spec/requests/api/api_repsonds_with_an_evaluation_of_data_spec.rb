@@ -20,11 +20,11 @@ describe 'expected to receive a response for valid request ' do
       expect(response).to have_http_status 200
     end
 
-    it 'is expected to respond with an evaluated output' do
-      # binding.pry
-      expect(JSON.parse(response.body){['classifications']["tag_name"]}).to eq (expected_response)
+    it 'is expected to respond with the classifications from the stub' do
+      response_json = (JSON.parse(response.body))
+      expect(eval(response_json['results']['classifications'])).to eq JSON.parse(expected_response)[0]['classifications']
     end
 
+    
   end
 end
-# ['results']{['classifications']}
