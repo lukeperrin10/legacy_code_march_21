@@ -1,6 +1,6 @@
 RSpec.describe 'POST /api/analyses', type: :request do 
 let(:expected_response) do
-  file_fixture('monkey_learn.json').read.as_json
+  file_fixture('monkey_learn.json').read
 end
 
 params = { analysis: {
@@ -19,8 +19,11 @@ describe 'expected to receive a response for valid request ' do
       expect(response).to have_http_status 200
     end
 
-    it 'is expected to respond with an evaluated output' do
-      expect(JSON.parse(response.body)['results']{['classifications']}).to eq JSON.parse(expected_response) 
+    it 'is expected to respond with the classifications from the stub' do
+      response_json = (JSON.parse(response.body))
+      expect(eval(response_json['results']['classifications'])).to eq JSON.parse(expected_response)[0]['classifications']
     end
+
+    
   end
 end
