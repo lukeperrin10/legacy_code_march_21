@@ -21,7 +21,8 @@ RSpec.describe 'POST /api/analyses', type: :request do
       end
   
       it 'is expected to respond with an evaluated output' do
-         expect(JSON.parse(response.body)).to eq JSON.parse(expected_response)
+        # response_json = (JSON.parse(response.body))
+        expect(JSON.parse(response.body)[:results]).to eq JSON.parse(expected_response)[:results]
       end
       
     end
