@@ -25,6 +25,16 @@ describe 'expected to receive a response for valid request ' do
       expect(eval(response_json['results']['classifications'])).to eq JSON.parse(expected_response)[0]['classifications']
     end
 
+    it 'is expected to respond with the tag of clean' do
+      response_json = (JSON.parse(response.body))
+      expect(eval(response_json['results']['classifications'])[0]['tag_name']).to eq 'clean'
     
+    end
+
+    it 'is expected to respond with a confidence rating' do
+      response_json = (JSON.parse(response.body))
+      evaluation = (eval(response_json['results']['classifications']))
+      expect(evaluation[0]['confidence']).to be > 0.90
+    end
   end
 end
